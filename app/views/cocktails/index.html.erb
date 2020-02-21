@@ -1,16 +1,15 @@
-<% @cocktails.each do |cocktail| %>
-  	<h2><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h2>
-	<p><%= link_to "Add a new dose", new_cocktail_dose_path(cocktail) %></p>
-<% end %>
-<p><%= link_to "Add a new cocktail", new_cocktail_path %></p>
-
-
-<!-- 
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div> -->
+<h1>Fancy Cocktails</h1>
+<div class="container">
+	<div class="card-columns">
+		<% @cocktails.each do |cocktail| %>
+			<div class="card" style="width: 18rem;">
+				<img src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/05/22/13/gin-cocktails.jpg" class="card-img-top" alt="...">
+			  	<h2 class="cocktail_name"><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h2>
+				<p class="btn btn-primary"><%= link_to "Add a new dose", new_cocktail_dose_path(cocktail) %></p>
+			</div>
+		<% end %>
+	</div>
+</div>
+<div class="add_cocktail">
+<p class="btn btn-secondary"><%= link_to "Add a new cocktail", new_cocktail_path %></p>
+</div>
